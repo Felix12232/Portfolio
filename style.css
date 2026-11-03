@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #2c3e50;   /* color base oscuro para que el texto blanco resalte */
+    color: #ffffff;              /* TEXTO BLANCO */
+    line-height: 1.4;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.logo-img {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+/* IMAGEN DE FONDO CON OPACIDAD usando pseudo-elemento */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./img/profile.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.9;                /* AQUÍ CONTROLAS LA OPACIDAD (0.0 a 1.0) */
+    z-index: -1;                 /* se queda detrás del contenido */
+}
+
+/* Navegacion barra superior */
+.header-navegacion {
+    background-color: rgba(10, 25, 47, 0.30);  /* azul oscuro parecido a tu imagen; baja el último número para más transparencia */
+    backdrop-filter: blur(8px);                 /* efecto cristal: difumina la imagen detrás */
+    -webkit-backdrop-filter: blur(3px);         /* compatibilidad con Safari */
+    padding: 12px 30px;
+    width: 100%;
+    position: sticky;                           /* se queda arriba al hacer scroll */
+    top: 0;
+    z-index: 1000;                              /* aquí, en el header, no en el ul */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navegacion ul { 
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navegacion li {
+    margin: 0 15px;
+}
+
+.navegacion a {
+    color: #f5f3f3;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.navegacion a:hover {
+    color: #16698d;
+    text-decoration: underline;
+}
+
+.nombre {
+    font-size: 3em;
+    font-family: 'Poppins', sans-serif;
+   /* text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);  sombra para que resalte */
+}
+
+/* CONTENEDOR DEL TEXTO */
+.contenido {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px 30px 90px;
+    align-items: center;
+    text-align: right;
+    /*background-color: rgba(0, 0, 0, 0.35); capa oscura semitransparente detrás del texto */
+    border-radius: 15px;
+     backdrop-filter: blur(5px);        /*    efecto cristal, opcional */
+    background-color: transparent; /* fondo transparente para que se vea la imagen */
+}
+.descripcion {
+    width: 60%;
+    margin-left: auto;
+    text-align: center;
+    font-size: 16px;
+    color: #f5f3f3;               /* TEXTO BLANCO */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* sombra para legibilidad */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .nombre {
+        font-size: 2em;
+    }
+    .contenido {
+        padding: 20px;
+        margin: 10px;
+    }
+    .descripcion {
+        text-align: left;
+    } 
+}
+
+.footer-articulo {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px 30px 110px;   /* el espacio inferior evita que el footer tape la imagen */
+    width: 100%;
+}
+
+.footer-img {
+    display: block;
+    margin: 0 auto;
+    width: min(90%, 720px);     /* ancho cómodo de lectura */
+    height: auto;               /* mantiene la proporción del documento */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease;
+}
+
+.footer-img:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .footer-img {
+        width: 100%;
+    }
+}
+
+.footer{
+    background-color: rgba(10, 25, 47, 0.30);  /* azul oscuro parecido a tu imagen; baja el último número para más transparencia */
+    backdrop-filter: blur(8px);                 /* efecto cristal: difumina la imagen detrás */
+    -webkit-backdrop-filter: blur(8px);         /* compatibilidad con Safari */
+    padding: 20px;
+    width: 100%;
+    position: absolute;  /* se queda al final del contenido */
+    bottom: 0;
+    z-index: 1000; /* aquí, en el footer, no en el ul */
+    text-align: center;
+}
+.footer p:hover {
+    color: #c61b1b;
+    font-size: 14px;
+    font-weight: bold;
+    font-size: 16px;
+}

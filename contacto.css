@@ -1,0 +1,131 @@
+/* ---------- Contacto ---------- */
+.contacto {
+    width: 60%;
+    margin: 60px 0 0 auto;
+    padding: 32px;
+    text-align: left;
+    background-color: rgba(10, 25, 47, 0.30);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 15px;
+    scroll-margin-top: 90px;
+}
+
+.contacto-titulo {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.contacto-texto {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #f5f3f3;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.contacto-form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.fila {
+    display: flex;
+    gap: 16px;
+}
+
+.campo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contacto-form label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #f5f3f3;
+}
+
+.contacto-form input,
+.contacto-form select,
+.contacto-form textarea {
+    font: inherit;
+    color: #f5f3f3;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 11px 12px;
+    margin-bottom: 8px;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.contacto-form select option {
+    color: #0a2245;
+}
+
+.contacto-form ::placeholder {
+    color: rgba(245, 243, 243, 0.5);
+}
+
+.contacto-form input:focus,
+.contacto-form select:focus,
+.contacto-form textarea:focus {
+    outline: none;
+    border-color: #4fc3f7;
+    background-color: rgba(79, 195, 247, 0.1);
+}
+
+.contacto-form textarea {
+    resize: vertical;
+}
+
+.contacto-form button {
+    font: inherit;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #16698d;
+    border: 0;
+    border-radius: 8px;
+    padding: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.contacto-form button:hover {
+    background-color: #1d86b3;
+}
+
+.contacto-form button:active {
+    transform: scale(0.98);
+}
+
+.form-estado {
+    min-height: 1.4em;
+    text-align: center;
+    font-size: 14px;
+}
+
+.form-estado.ok {
+    color: #7ee0a1;
+}
+
+.form-estado.error {
+    color: #ff8a8a;
+}
+
+@media (max-width: 768px) {
+    .contacto {
+        width: 100%;
+        margin-top: 40px;
+        padding: 22px;
+    }
+
+    .fila {
+        flex-direction: column;
+        gap: 0;
+    }
+}

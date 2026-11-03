@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Portfolio</title>
+  </head>
+
+  <body>
+    <header class="header-navegacion">
+      <div class="logo">
+        <img class="logo-img" src="img/logo-icono.svg" alt="Logo de Felix Patricio" />
+      </div>
+      <nav class="navegacion">
+        <ul>
+          <li><a href="conocimiento.html">Conocimiento</a></li>
+          <li><a href="proyecto.html">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="contenido">
+      <h1 class="nombre">Hola soy Felix Patricio</h1>
+      <br>
+      <p class="descripcion">
+        Desarrollador de software especializado en backend con Java y Spring Boot y en aplicaciones Android con Kotlin. Mi proyecto más destacado es Amani Psicología, una plataforma para gestionar pacientes, psicólogos y citas.
+      </p>
+
+      <!-- CONTACTO -->
+      <section id="contacto" class="contacto">
+        <h2 class="contacto-titulo">Estoy buscando trabajo</h2>
+        <p class="contacto-texto">
+          Estoy en búsqueda activa de una oportunidad como desarrollador de software.
+          Si tu empresa tiene una vacante, déjame sus datos y te responderé lo antes posible.
+        </p>
+        <p class="contacto-texto contacto-correo">
+          Para más información escríbeme a
+          <a href="mailto:felixpa2001@gmail.com">felixpa2001@gmail.com</a>
+        </p>
+
+        <form id="form-contacto" class="contacto-form" action="https://formspree.io/f/xgoqkggn" method="POST">
+          <div class="fila">
+            <div class="campo">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa" required />
+            </div>
+            <div class="campo">
+              <label for="email">Email de contacto</label>
+              <input type="email" id="email" name="email" placeholder="seleccion@empresa.com" required />
+            </div>
+          </div>
+
+          <div class="fila">
+            <div class="campo">
+              <label for="puesto">Puesto ofertado</label>
+              <input type="text" id="puesto" name="puesto" placeholder="Ej.: Desarrollador backend Java" />
+            </div>
+            <div class="campo">
+              <label for="modalidad">Modalidad</label>
+              <select id="modalidad" name="modalidad">
+                <option>Por definir</option>
+                <option>Presencial</option>
+                <option>Híbrido</option>
+                <option>Remoto</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntame brevemente sobre la oferta" required></textarea>
+
+          <input type="hidden" name="_subject" value="Nueva oferta desde tu portfolio" />
+          <!-- Campo oculto anti-spam -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" />
+
+          <button type="submit">Enviar</button>
+          <p id="form-estado" class="form-estado" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Felix Patricio</p>
+    </footer>
+
+    <script>
+      const form = document.getElementById('form-contacto');
+      const estado = document.getElementById('form-estado');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        estado.className = 'form-estado';
+        estado.textContent = 'Enviando…';
+        try {
+          const r = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' }
+          });
+          if (r.ok) {
+            form.reset();
+            estado.classList.add('ok');
+            estado.textContent = '¡Gracias! He recibido los datos y te responderé pronto.';
+          } else {
+            throw new Error();
+          }
+        } catch {
+          estado.classList.add('error');
+          estado.textContent = 'No se ha podido enviar. Inténtalo de nuevo en unos minutos.';
+        }
+      });
+    </script>
+  </body>
+</html>

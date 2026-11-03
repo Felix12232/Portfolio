@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Proyectos | Félix Patricio</title>
+
+    <link rel="stylesheet" href="proyecto.css">
+    <script src="carrusel.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header-navegacion">
+        <a class="logo" href="index.html" aria-label="Ir al inicio">
+            <img
+                src="img/logo-icono.svg"
+                alt="Logo de Félix Patricio"
+            >
+        </a>
+
+        <nav class="navegacion" aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="conocimiento.html">Conocimiento</a></li>
+                <li><a href="proyectos.html" aria-current="page">Proyectos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="introduccion">
+            <h1>Mis proyectos</h1>
+
+            <p>
+                Entre los proyectos que he realizado, destaco algunos
+                que considero especialmente relevantes para mi
+                trayectoria profesional.
+            </p>
+        </section>
+
+        <section class="proyectos" aria-label="Lista de proyectos">
+
+            <!-- Proyecto AMANI -->
+            <article class="proyecto">
+                <h2>AMANI</h2>
+
+                <p>
+                    Es una aplicación Android para la gestión de
+                    citas psicológicas, diseñada para facilitar
+                    la comunicación entre pacientes y psicólogos.
+                </p>
+            </article>
+
+            <!-- Proyecto Control de horario -->
+            <article class="proyecto">
+                <h2>Control de horario</h2>
+
+                <p>
+                    Es una aplicación web personal para la gestión
+                    del tiempo y los horarios de trabajo.
+                </p>
+
+                <div class="proyect2" data-carrusel>
+
+                    <img
+                        class="imagen-proyecto activa"
+                        src="img/controlHorario/img1.png"
+                        alt="Control de horario: vista principal"
+                    >
+
+                    <img
+                        class="imagen-proyecto"
+                        src="img/controlHorario/img2.png"
+                        alt="Control de horario: segunda vista"
+                    >
+
+                    <img
+                        class="imagen-proyecto"
+                        src="img/controlHorario/img3.png"
+                        alt="Control de horario: tercera vista"
+                    >
+
+                </div>
+            </article>
+
+            <!-- Proyecto Control de gastos -->
+            <article class="proyecto">
+                <h2>Control de gastos</h2>
+
+                <p>
+                    Es una aplicación web para la gestión de gastos
+                    personales, que permite organizar y controlar
+                    los movimientos económicos.
+                </p>
+                <div class="proyect2" data-carrusel>
+
+                    <img
+                        class="imagen-proyecto activa"
+                        src="img/controlGastos/img1.png"
+                        alt="Control de gastos: vista principal"
+                    >
+
+                    <img
+                        class="imagen-proyecto"
+                        src="img/controlGastos/img2.png"
+                        alt="Control de gastos: segunda vista"
+                    >
+
+                    <img
+                        class="imagen-proyecto"
+                        src="img/controlGastos/img3.png"
+                        alt="Control de gastos: tercera vista"
+                    >
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <p>© 2026 Félix Patricio. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
